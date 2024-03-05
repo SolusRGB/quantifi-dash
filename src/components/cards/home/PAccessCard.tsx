@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Link from "next/link";

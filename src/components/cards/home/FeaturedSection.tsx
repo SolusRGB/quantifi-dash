@@ -1,5 +1,5 @@
 import featuredData from "./data/FeaturedData.json";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 

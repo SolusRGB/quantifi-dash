@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import solanaIcon from "../../../../public/icons/solana-logo.svg";

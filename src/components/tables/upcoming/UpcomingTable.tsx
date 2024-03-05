@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckCircleIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import upcomingTableData from "./data/UpcomingTableData.json";
 
