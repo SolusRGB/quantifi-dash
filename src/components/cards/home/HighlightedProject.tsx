@@ -8,7 +8,7 @@ export default function HighlightedProjects() {
           <div className="lg:self-center">
             <h2 className="text-4xl font-bold tracking-tight text-white xl:text-5xl">
               <span className="block">NFT Highlight:</span>
-              <span className="text-sunray block">Utility Ape</span>
+              <span className="block text-sunray">Utility Ape</span>
             </h2>
             <p className="mt-4 text-lg leading-6 text-white/70">
               This weeks highlight just sold out their highly anticipated 2nd
@@ -16,7 +16,7 @@ export default function HighlightedProjects() {
             </p>
             <a
               href="#"
-              className="bg-sunray mt-8 inline-flex items-center rounded-xl border border-transparent px-8 py-2.5 text-base font-medium text-black hover:brightness-110"
+              className="mt-8 inline-flex items-center rounded-xl border border-transparent bg-sunray px-8 py-2.5 text-base font-medium text-black hover:brightness-110"
             >
               View Project
             </a>
@@ -31,8 +31,9 @@ export default function HighlightedProjects() {
               fill
               sizes="100vw"
               style={{
-                objectFit: "cover"
-              }} />
+                objectFit: "cover",
+              }}
+            />
             <Image
               src="/featured/utility-ape.jpg"
               alt=""
@@ -40,8 +41,9 @@ export default function HighlightedProjects() {
               fill
               sizes="100vw"
               style={{
-                objectFit: "cover"
-              }} />
+                objectFit: "cover",
+              }}
+            />
           </div>
         </div>
       </div>

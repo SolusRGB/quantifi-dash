@@ -10,8 +10,9 @@ export default function QuantifiBanner() {
           fill
           sizes="100vw"
           style={{
-            objectFit: "cover"
-          }} />
+            objectFit: "cover",
+          }}
+        />
         <div className="absolute inset-0 bg-[#242424]/60 mix-blend-overlay"></div>
       </div>
       <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
@@ -34,7 +35,7 @@ export default function QuantifiBanner() {
             <div className="inline-flex rounded-md shadow">
               <a
                 href=""
-                className="bg-sunray inline-flex items-center justify-center rounded-xl border border-transparent px-5 py-3 text-base font-medium text-gray-900 hover:brightness-110"
+                className="inline-flex items-center justify-center rounded-xl border border-transparent bg-sunray px-5 py-3 text-base font-medium text-gray-900 hover:brightness-110"
               >
                 Enter The Discord
               </a>
