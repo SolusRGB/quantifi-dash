@@ -1,5 +1,5 @@
 import featuredData from "./data/FeaturedData.json";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 
@@ -18,10 +18,12 @@ const FeaturedCards = ({ path, name, header, label }: FeaturedCardsProp) => {
           <Image
             alt={name}
             src={header}
-            layout="fill"
-            objectFit="cover"
             priority
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover"
+            }} />
         </div>
         <div className="flex">
           <div className="inline-flex items-center px-4 pt-3 text-xs font-medium text-white/80 xl:text-lg">

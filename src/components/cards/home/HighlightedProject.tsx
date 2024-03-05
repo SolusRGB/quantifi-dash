@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export default function HighlightedProjects() {
   return (
@@ -27,17 +27,21 @@ export default function HighlightedProjects() {
             <Image
               src="/featured/utility-ape-stacked.jpg"
               alt=""
-              layout="fill"
-              objectFit="cover"
               className="-translate-x-6 -translate-y-2 scale-75 rounded-3xl duration-700 ease-in-out group-hover:-translate-y-8"
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
             <Image
               src="/featured/utility-ape.jpg"
               alt=""
-              layout="fill"
-              objectFit="cover"
               className="translate-x-6 translate-y-2 scale-75 rounded-3xl delay-100 duration-700 ease-in-out group-hover:translate-y-8"
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
           </div>
         </div>
       </div>

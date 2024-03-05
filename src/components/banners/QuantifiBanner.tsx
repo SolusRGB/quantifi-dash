@@ -1,10 +1,17 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export default function QuantifiBanner() {
   return (
     <div className="relative border-x border-[#e6e6e6]/5 bg-[#242424]">
       <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-        <Image layout="fill" objectFit="cover" src="/hero.png" alt="" />
+        <Image
+          src="/hero.png"
+          alt=""
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
         <div className="absolute inset-0 bg-[#242424]/60 mix-blend-overlay"></div>
       </div>
       <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">

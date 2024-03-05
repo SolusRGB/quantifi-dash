@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckCircleIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import upcomingTableData from "./data/UpcomingTableData.json";
 
@@ -32,9 +32,7 @@ export function UpcomingTable({}: UpcomingTableProps) {
                         alt="Project Icon"
                         width={43}
                         height={43}
-                        layout="fixed"
-                        priority
-                      />
+                        priority />
                     </div>
 
                     <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
@@ -43,14 +41,7 @@ export function UpcomingTable({}: UpcomingTableProps) {
                           {upcomingTable.project.name}
                         </p>
                         <p className="mt-2 flex items-center text-sm text-gray-300">
-                          <Image
-                            src="/solana-logo.svg"
-                            alt="Solana Logo"
-                            width={15}
-                            height={15}
-                            layout="fixed"
-                            priority
-                          />
+                          <Image src="/solana-logo.svg" alt="Solana Logo" width={15} height={15} priority />
                           <span className="ml-1 truncate">
                             {upcomingTable.project.chain}
                           </span>

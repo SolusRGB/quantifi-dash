@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 type Collection = {
   symbol: string;
@@ -97,7 +97,10 @@ const MagicEdenTable = () => {
                     width={50}
                     height={50}
                     className="rounded-full"
-                  />
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </td>
               </tr>
             ),
