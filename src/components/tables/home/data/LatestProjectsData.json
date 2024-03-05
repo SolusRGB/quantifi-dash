@@ -1,0 +1,42 @@
+[
+	{
+		"id": "dd",
+		"name": 2,
+		"assessDate": "May 27th, 2022",
+		"discord": "https://discord.gg/myKetMYX",
+		"twitter": "https://twitter.com/suteki_nft?s=21&t=ExMjOHfyOt8gMH_SSSh8tw",
+		"score": 83,
+		"mintDate": "Minted",
+		"image": "/project-icons/suteki.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Crowdsurf",
+		"assessDate": "Aug 1st, 2022",
+		"discord": "https://t.co/u0GYHZZGzo",
+		"twitter": "https://twitter.com/crowdsurfnft?s=21&t=ExMjOHfyOt8gMH_SSSh8tw",
+		"score": 82,
+		"mintDate": "Minted",
+		"image": "/project-icons/crowdsurf.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Satori",
+		"assessDate": "August 5th, 2022",
+		"discord": "https://t.co/oNdspRLsW1",
+		"twitter": "",
+		"score": 83,
+		"mintDate": "Minted",
+		"image": "/project-icons/satori.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Fearless Bulls",
+		"assessDate": "Aug 25th, 2022",
+		"discord": "https://discord.gg/sKEgbev5",
+		"twitter": "https://twitter.com/fearless_bulls?s=21&t=ExMjOHfyOt8gMH_SSSh8tw",
+		"score": 70,
+		"mintDate": "Minted",
+		"image": "/project-icons/fearless-bulls.jpg"
+	}
+]

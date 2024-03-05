@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/projects/utility-ape",
+    "name": "Utility Ape",
+    "header": "/featured/utility-ape.jpg",
+    "label": "NEW",
+    "label2": "--/100"
+  },
+  {
+    "path": "/projects/busy-boars",
+    "name": "Busy Boars",
+    "header": "/featured/busy-boars.jpg",
+    "label": "NEW",
+    "label2": "83/100"
+  },
+  {
+    "path": "/projects/fearless-bulls-club",
+    "name": "Fearless Bulls Club",
+    "header": "/featured/fearless-bulls-club.jpg",
+    "label": "",
+    "label2": "70/100"
+  },
+  {
+    "path": "/projects/satori",
+    "name": "Satori",
+    "header": "/featured/satori.jpg",
+    "label": "",
+    "label2": "83/100"
+  }
+]

@@ -1,6 +1,29 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
+/**
+ * Represents the environment configuration for the application.
+ *
+ * @typedef {Object} EnvConfig
+ * @property {Object} server - Server-side environment variables schema.
+ * @property {string} server.DATABASE_URL - The URL of the database.
+ * @property {string} server.NODE_ENV - The environment mode (development, test, production).
+ * @property {string} server.NEXTAUTH_SECRET - The secret key for NextAuth.js.
+ * @property {string} server.NEXTAUTH_URL - The URL for NextAuth.js.
+ * @property {string} server.DISCORD_CLIENT_ID - The Discord client ID.
+ * @property {string} server.DISCORD_CLIENT_SECRET - The Discord client secret.
+ * @property {Object} client - Client-side environment variables schema.
+ * @property {Object} runtimeEnv - Runtime environment variables.
+ * @property {boolean} skipValidation - Flag to skip environment validation.
+ * @property {boolean} emptyStringAsUndefined - Flag to treat empty strings as undefined.
+ */
+
+/**
+ * Creates the environment configuration object.
+ *
+ * @param {EnvConfig} config - The configuration object.
+ * @returns {Object} The environment configuration object.
+ */
 export const env = createEnv({
   /**
    * Specify your server-side environment variables schema here. This way you can ensure the app
@@ -12,7 +35,7 @@ export const env = createEnv({
       .url()
       .refine(
         (str) => !str.includes("YOUR_MYSQL_URL_HERE"),
-        "You forgot to change the default URL"
+        "You forgot to change the default URL",
       ),
     NODE_ENV: z
       .enum(["development", "test", "production"])
@@ -26,7 +49,7 @@ export const env = createEnv({
       // Since NextAuth.js automatically uses the VERCEL_URL if present.
       (str) => process.env.VERCEL_URL ?? str,
       // VERCEL_URL doesn't include `https` so it cant be validated as a URL
-      process.env.VERCEL ? z.string() : z.string().url()
+      process.env.VERCEL ? z.string() : z.string().url(),
     ),
     DISCORD_CLIENT_ID: z.string(),
     DISCORD_CLIENT_SECRET: z.string(),

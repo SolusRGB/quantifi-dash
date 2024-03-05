@@ -1,0 +1,23 @@
+import Heatmap from "@/components/trading-view/charts/Heatmap";
+
+import TradingViewWidget from "@/components/trading-view/charts/TradingViewWidget";
+
+import { IndexLayout } from "@/layout/Layout";
+import React from "react";
+
+export default function charts() {
+  return (
+    <IndexLayout>
+      <div className="flex h-screen flex-col">
+        {/* Each widget takes up half of the container's height */}
+        <div className="flex-1">
+          <TradingViewWidget />
+        </div>
+        <div className="flex-1">
+          <Heatmap />
+        </div>
+      </div>
+      q
+    </IndexLayout>
+  );
+}

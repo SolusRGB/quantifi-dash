@@ -1,0 +1,62 @@
+[
+	{
+		"project": {
+			"name": "Wakuland",
+			"chain": "Sol",
+			"imageUrl": "/icons/wakuland.png"
+		},
+		"mintDate": "September 21, 2022",
+		"stage": "Pre-mint",
+		"href": "https://magiceden.io/"
+	},
+	{
+		"project": {
+			"name": "SharkiFi",
+			"chain": "Sol",
+			"imageUrl": "/PAccessSeal.png"
+		},
+		"mintDate": "January 7, 2020",
+		"stage": "Pre-mint",
+		"href": "#"
+	},
+	{
+		"project": {
+			"name": "Outcast",
+			"chain": "Sol",
+			"imageUrl": "/PAccessSeal.png"
+		},
+		"mintDate": "January 7, 2020",
+		"stage": "Pre-mint",
+		"href": "#"
+	},
+	{
+		"project": {
+			"name": "y00ts",
+			"chain": "Sol",
+			"imageUrl": "/PAccessSeal.png"
+		},
+		"mintDate": "January 7, 2020",
+		"stage": "Pre-mint",
+		"href": "#"
+	},
+	{
+		"project": {
+			"name": "Sachi",
+			"chain": "Sol",
+			"imageUrl": "/PAccessSeal.png"
+		},
+		"mintDate": "January 7, 2020",
+		"stage": "Pre-mint",
+		"href": "#"
+	},
+	{
+		"project": {
+			"name": "Cropper Potions",
+			"chain": "Sol",
+			"imageUrl": "/PAccessSeal.png"
+		},
+		"mintDate": "January 7, 2020",
+		"stage": "Pre-mint",
+		"href": "#"
+	}
+]

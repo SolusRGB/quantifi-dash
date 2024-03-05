@@ -6,7 +6,15 @@ import {
   publicProcedure,
 } from "@/server/api/trpc";
 
+/**
+ * Router for handling POST requests.
+ */
 export const postRouter = createTRPCRouter({
+  /**
+   * Retrieves a greeting message based on the provided text.
+   * @param input - The input object containing the text.
+   * @returns An object with the greeting message.
+   */
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
@@ -15,6 +23,11 @@ export const postRouter = createTRPCRouter({
       };
     }),
 
+  /**
+   * Creates a new post.
+   * @param input - The input object containing the name of the post.
+   * @returns The created post object.
+   */
   create: protectedProcedure
     .input(z.object({ name: z.string().min(1) }))
     .mutation(async ({ ctx, input }) => {
@@ -25,10 +38,15 @@ export const postRouter = createTRPCRouter({
         data: {
           name: input.name,
           createdBy: { connect: { id: ctx.session.user.id } },
+          updatedAt: new Date(), // Add the updatedAt property
         },
       });
     }),
 
+  /**
+   * Retrieves the latest post created by the authenticated user.
+   * @returns The latest post object.
+   */
   getLatest: protectedProcedure.query(({ ctx }) => {
     return ctx.db.post.findFirst({
       orderBy: { createdAt: "desc" },
@@ -36,7 +54,11 @@ export const postRouter = createTRPCRouter({
     });
   }),
 
+  /**
+   * Retrieves a secret message for the authenticated user.
+   * @returns The secret message.
+   */
   getSecretMessage: protectedProcedure.query(() => {
-    return "you can now see this secret message!";
+    return "Authenticated ";
   }),
 });
