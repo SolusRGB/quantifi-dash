@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 import { IndexLayout } from "../layout/Layout";
-
 import MagicEdenTable from "@/components/tables/magic-eden/MagicEdenTable";
 
 export default function Projects() {

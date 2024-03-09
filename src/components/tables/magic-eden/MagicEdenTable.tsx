@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { imageLoader } from "@/utils/imageLoader";
+import { formatCurrency } from "@/utils/formatCurrency";
+import { lamportsToSOL } from "@/utils/lamportsToSol";
 
 type Collection = {
   symbol: string;
@@ -13,14 +16,6 @@ type Collection = {
 type ApiResponse = {
   collections: Collection[];
 };
-
-// Constants
-const LAMPORTS_PER_SOL = 1000000000; // 1 SOL = 1,000,000,000 lamports
-
-// Function to convert lamports to SOL
-function lamportsToSOL(lamports: number) {
-  return lamports / LAMPORTS_PER_SOL;
-}
 
 const MagicEdenTable = () => {
   const [collections, setCollections] = useState<Collection[]>([]); // Ensures initial state is an array
@@ -60,23 +55,23 @@ const MagicEdenTable = () => {
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table className="w-full text-left text-sm text-gray-500">
-        <thead className="bg-gray-50 text-xs uppercase text-gray-700">
+      <table className="w-full text-left text-sm text-white">
+        <thead className="overflow-hidden border border-[#e6e6e6]/5 bg-[#242424] py-2 lg:rounded-t-3xl">
           <tr>
             <th scope="col" className="px-6 py-3">
-              Project Name
+              Rank
             </th>
             <th scope="col" className="px-6 py-3">
-              Description
+              Logo
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Project Name
             </th>
             <th scope="col" className="px-6 py-3">
               Floor Price
             </th>
             <th scope="col" className="px-6 py-3">
               Volume
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Image
             </th>
           </tr>
         </thead>
@@ -85,23 +80,30 @@ const MagicEdenTable = () => {
             (
               collection, // Using optional chaining for safety
             ) => (
-              <tr key={collection.symbol} className="border-b bg-white">
-                <td className="px-6 py-4">{collection.name}</td>
+              <tr
+                key={collection.symbol}
+                className="overflow-hidden border border-[#e6e6e6]/5 bg-[#242424] py-2 lg:rounded-t-3xl"
+              >
                 <td className="px-6 py-4">{collection.description}</td>
-                <td className="px-6 py-4">{collection.floorPrice}</td>
-                <td className="px-6 py-4">{collection.volumeAll}</td>
                 <td className="px-6 py-4">
                   <Image
-                    src={"solana-logo.svg"}
+                    loader={imageLoader}
+                    src={collection.image}
                     alt={`${collection.name} Image`}
                     width={50}
                     height={50}
                     className="rounded-full"
                     style={{
                       maxWidth: "100%",
-                      height: "auto"
-                    }} />
+                      height: "auto",
+                    }}
+                  />
                 </td>
+                <td className="px-6 py-4">{collection.name}</td>
+                <td className="px-6 py-4">
+                  {formatCurrency(collection.floorPrice, true)}
+                </td>
+                <td className="px-6 py-4">{collection.volumeAll}</td>
               </tr>
             ),
           )}

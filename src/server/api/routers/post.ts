@@ -19,7 +19,7 @@ export const postRouter = createTRPCRouter({
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
       return {
-        greeting: `Hello ${input.text}`,
+        greeting: `Hello, ${input.text}`,
       };
     }),
 
@@ -28,6 +28,7 @@ export const postRouter = createTRPCRouter({
    * @param input - The input object containing the name of the post.
    * @returns The created post object.
    */
+  // this is a protected measure, which means it requires authentication this is taking the user name when it was created and updated then returns this
   create: protectedProcedure
     .input(z.object({ name: z.string().min(1) }))
     .mutation(async ({ ctx, input }) => {
