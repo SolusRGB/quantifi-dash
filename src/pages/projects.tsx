@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import { IndexLayout } from "../layout/Layout";
 import MagicEdenTable from "@/components/tables/magic-eden/MagicEdenTable";
+import SolanaPriceInfo from "@/components/crypto/SolanaPriceInfo";
 
 export default function Projects() {
   return (
@@ -13,6 +14,9 @@ export default function Projects() {
       </Head>
 
       <main>
+        <div className="flex">
+          <SolanaPriceInfo />
+        </div>
         <MagicEdenTable />
       </main>
     </>
