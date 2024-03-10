@@ -1,19 +1,10 @@
+import {
+  type PopularCollectionsResponse,
+  type Collection,
+} from "@/types/magicEdenTypes";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type Collection = {
-  symbol: string;
-  name: string;
-  description: string;
-  image: string;
-  floorPrice: number;
-  volumeAll: number;
-};
-
-type PopularCollectionsResponse = {
-  collections: Collection[];
-};
-
-export default async function collections(
+export default async function magicEdenCollections(
   req: NextApiRequest,
   res: NextApiResponse<PopularCollectionsResponse | { message: string }>,
 ) {
