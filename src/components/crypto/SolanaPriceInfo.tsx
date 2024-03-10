@@ -4,7 +4,6 @@ import {
   type CryptocurrencyData,
 } from "@/types/coinGeckoTypes";
 import Image from "next/image";
-import solanaIcon from "../../../../public/icons/solana-logo.svg";
 
 const SolanaPriceInfo = () => {
   const [solanaPrice, setSolanaPrice] = useState<TokenInformation | null>(null);

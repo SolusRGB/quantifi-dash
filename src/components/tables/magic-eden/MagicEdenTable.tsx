@@ -2,32 +2,32 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { imageLoader } from "@/utils/imageLoader";
 import { formatCurrency } from "@/utils/formatCurrency";
-import { lamportsToSOL } from "@/utils/lamportsToSol";
+import { lamportsToUSD } from "@/utils/lamportsToSol";
 import { type Collection, type ApiResponse } from "@/types/magicEdenTypes";
 
 const MagicEdenTable = () => {
-  const [collections, setCollections] = useState<Collection[]>([]); // Ensures initial state is an array
+  const [collections, setCollections] = useState<Collection[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
       try {
         const res = await fetch("/api/magic-eden/magicEdenCollections");
         if (!res.ok) {
-          const message = await res.text(); // Gets the error message text from the response
+          const message = await res.text();
           throw new Error(`Failed to fetch: ${res.status} - ${message}`);
         }
         const data: ApiResponse = (await res.json()) as ApiResponse;
         console.log(
           "Data received from /api/magic-eden/magicEdenCollections:",
           data,
-        ); // Log the data for debugging
+        );
         if (data?.collections) {
           const updatedCollections = data.collections.map((collection) => ({
             ...collection,
-            floorPrice: lamportsToSOL(collection.floorPrice),
+            floorPrice: lamportsToUSD(collection.floorPrice, 144), // HARDCODED NEED TO DYNAMICALLY FETCH SOLANA PRICE
           }));
-          setCollections(updatedCollections.slice(0, 10)); // Take only the top 10 collections
+          setCollections(updatedCollections.slice(0, 10));
         } else {
           setError("No collections data available");
         }
@@ -92,7 +92,9 @@ const MagicEdenTable = () => {
               <td className="px-6 py-4">
                 {formatCurrency(collection.floorPrice, true)}
               </td>
-              <td className="px-6 py-4">{collection.volumeAll}</td>
+              <td className="px-6 py-4">
+                {formatCurrency(collection.volumeAll)}
+              </td>
             </tr>
           ))}
         </tbody>
