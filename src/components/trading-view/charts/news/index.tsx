@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link"; // Make sure to import Link
 import EconomicCalendar from "./EconomicCalendar";
 import TopStories from "./TopStories";
 

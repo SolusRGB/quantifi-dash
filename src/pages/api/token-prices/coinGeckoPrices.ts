@@ -1,4 +1,3 @@
-// pages/api/coinGeckoPrices.ts
 import { type CryptocurrencyData } from "@/types/coinGeckoTypes";
 import { type NextApiRequest, type NextApiResponse } from "next";
 

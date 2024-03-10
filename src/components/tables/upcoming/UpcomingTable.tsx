@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { CheckCircleIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,12 +16,12 @@ type UpcomingTableProps = {
 
 export function UpcomingTable({}: UpcomingTableProps) {
   return (
-    <div className="bg-lightGrey mt-10 overflow-hidden rounded-[3rem] shadow-xl">
-      <ul role="list" className="divide-battleshipGrey divide-y">
+    <div className="mt-10 overflow-hidden rounded-[3rem] bg-lightGrey shadow-xl">
+      <ul role="list" className="divide-y divide-battleshipGrey">
         {upcomingTableData.map((upcomingTable) => (
           <li key={upcomingTable.project.chain}>
             <Link href={upcomingTable.href}>
-              <div className="hover:bg-gunmetal block duration-500">
+              <div className="block duration-500 hover:bg-gunmetal">
                 <div className="flex items-center px-4 py-4 sm:px-6">
                   <div className="flex min-w-0 flex-1 items-center">
                     <div className="flex-shrink-0">
@@ -32,16 +31,23 @@ export function UpcomingTable({}: UpcomingTableProps) {
                         alt="Project Icon"
                         width={43}
                         height={43}
-                        priority />
+                        priority
+                      />
                     </div>
 
                     <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
                       <div>
-                        <p className="text-platinum text-md truncate font-bold">
+                        <p className="text-md truncate font-bold text-platinum">
                           {upcomingTable.project.name}
                         </p>
                         <p className="mt-2 flex items-center text-sm text-gray-300">
-                          <Image src="/solana-logo.svg" alt="Solana Logo" width={15} height={15} priority />
+                          <Image
+                            src="/solana-logo.svg"
+                            alt="Solana Logo"
+                            width={15}
+                            height={15}
+                            priority
+                          />
                           <span className="ml-1 truncate">
                             {upcomingTable.project.chain}
                           </span>
@@ -49,7 +55,7 @@ export function UpcomingTable({}: UpcomingTableProps) {
                       </div>
                       <div className="hidden md:block">
                         <div>
-                          <p className="text-md text-platinum font-bold">
+                          <p className="text-md font-bold text-platinum">
                             Mints on <time>{upcomingTable.mintDate}</time>
                           </p>
                           <p className="mt-2 flex items-center text-sm text-gray-300">

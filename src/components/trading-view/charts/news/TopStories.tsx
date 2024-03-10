@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 const TopStories: React.FC = () => {
@@ -42,11 +43,11 @@ const TopStories: React.FC = () => {
   return (
     <div ref={containerRef} className="tradingview-widget-container">
       <div className="tradingview-widget-copyright">
-        <a
+        <Link
           href="https://www.tradingview.com/"
           rel="noopener nofollow"
           target="_blank"
-        ></a>
+        ></Link>
       </div>
     </div>
   );
