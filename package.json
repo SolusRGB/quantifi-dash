@@ -30,6 +30,7 @@
     "@trpc/server": "^10.45.0",
     "@types/chart.js": "^2.9.41",
     "@types/node-fetch": "^2.6.10",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.3",
     "axios-hooks": "^5.0.2",
     "chart.js": "^4.4.1",
