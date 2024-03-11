@@ -23,7 +23,8 @@ const AuthShowcase: React.FC = () => {
           User: {sessionData.user.name}
         </div>
         <button
-          className="flex items-center justify-center rounded-3xl border border-[#e6e6e6]/5 bg-sunray px-10 py-2.5 font-medium text-black transition duration-150 ease-out hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-yellow-300 dark:focus:ring-yellow-800"
+          className="flex items-center justify-center rounded-3xl border border-[#e6e6e6]/5 bg-sunray px-10 py-2.5
+           font-medium text-black transition duration-150 ease-out hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-yellow-300 dark:focus:ring-yellow-800"
           onClick={() => signOut({ redirect: false })}
         >
           Disconnect
@@ -34,7 +35,8 @@ const AuthShowcase: React.FC = () => {
     // Show sign in button
     return (
       <button
-        className="flex items-center justify-center rounded-3xl border border-[#e6e6e6]/5 bg-sunray px-10 py-2.5 font-medium text-black transition duration-150 ease-out hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-yellow-300 dark:focus:ring-yellow-800"
+        className="flex items-center justify-center rounded-3xl border border-[#e6e6e6]/5 bg-sunray px-10 py-2.5
+        font-medium text-black transition duration-150 ease-out hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-yellow-300 dark:focus:ring-yellow-800"
         onClick={() => signIn()}
       >
         Connect
