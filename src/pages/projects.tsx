@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { IndexLayout } from "../layout/Layout";
 import MagicEdenTable from "@/components/tables/magic-eden/MagicEdenTable";
-import SolanaPriceInfo from "@/components/crypto/SolanaPriceInfo";
+import SolanaPriceInfo from "@/components/tokens/SolanaPriceInfo";
 
 export default function Projects() {
   return (
