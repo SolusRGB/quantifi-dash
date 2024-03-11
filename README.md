@@ -1,4 +1,4 @@
-# Quantifi Dashboard
+# Quantifi
 
 Quantifi is a centralized dashboard for investors and collectors to access comprehensive analytics and visualizations for cryptocurrency and NFT data. This platform integrates with various real-time data sources from cryptocurrency APIs and NFT marketplaces to provide users with up-to-date information to make informed investment decisions.
 
