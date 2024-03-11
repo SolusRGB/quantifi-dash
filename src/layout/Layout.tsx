@@ -309,7 +309,6 @@ export function IndexLayout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
             <div className="mx-auto md:max-w-5xl lg:max-w-7xl lg:px-8">
-              {/* Replace with our nested layout content */}
               {children}
               <Analytics />
             </div>
