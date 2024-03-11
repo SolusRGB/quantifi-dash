@@ -11,7 +11,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { PAccessCard } from "../components/cards/home/PAccessCard";
 import { FolderIcon, BellIcon } from "@heroicons/react/24/outline";
-import { Analytics } from "@vercel/analytics/react";
 
 const navigation = [
   { name: "Latest", href: "/", icon: FolderIcon },
@@ -310,7 +309,6 @@ export function IndexLayout({ children }: { children: React.ReactNode }) {
             </div>
             <div className="mx-auto md:max-w-5xl lg:max-w-7xl lg:px-8">
               {children}
-              <Analytics />
             </div>
             <Footer />
           </main>

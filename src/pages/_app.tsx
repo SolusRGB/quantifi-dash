@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { SessionProvider } from "next-auth/react";
 import type { Session } from "next-auth";
+import { Analytics } from "@vercel/analytics/react";
 
 import { api } from "@/utils/api";
 
@@ -41,6 +42,7 @@ function MyApp({
       {Component.PageLayout ? (
         <Component.PageLayout>
           <Component {...pageProps} />
+          <Analytics />
         </Component.PageLayout>
       ) : (
         <Component {...pageProps} />
