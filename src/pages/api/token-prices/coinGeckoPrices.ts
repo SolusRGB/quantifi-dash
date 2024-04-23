@@ -6,7 +6,7 @@ export default async function solanaTokenPrice(
   res: NextApiResponse,
 ) {
   const endpoint =
-    "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=true&include_last_updated_at=true&precision=2";
+    "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=true&include_last_updated_at=true&precision=2&x_cg_demo_api_key=CG-97rkPtxMBDDxtgeTqW4BT22Y";
 
   try {
     const response = await fetch(endpoint);
