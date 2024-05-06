@@ -2,45 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import solanaIcon from "../../../../public/icons/solana-logo.svg";
-
-const latestProjects = [
-  {
-    name: "Utility Ape",
-    assessDate: "OCT 7",
-    score: "--",
-    mintDate: "OCT 14",
-    image: "/icons/utility-ape.jpg",
-    href: "/projects/utility-ape",
-    chain: "solana",
-  },
-  {
-    name: "Busy Boars",
-    assessDate: "OCT 1",
-    score: 83,
-    mintDate: "MINTED",
-    image: "/icons/busy-boars.jpg",
-    href: "/projects/busy-boars",
-    chain: "solana",
-  },
-  {
-    name: "Fearless Bulls",
-    assessDate: "AUG 25",
-    score: 70,
-    mintDate: "MINTED",
-    image: "/icons/fearless-bulls.png",
-    href: "/projects/fearless-bulls",
-    chain: "solana",
-  },
-  {
-    name: "Satori",
-    assessDate: "AUG 5",
-    score: 83,
-    mintDate: "MINTED",
-    image: "/icons/satori.png",
-    href: "/projects/satori",
-    chain: "solana",
-  },
-];
+import { useEffect, useState } from "react";
+import { type ProjectData } from "@/types/projectTypes";
 
 const HomeTableTitle = () => {
   return (
@@ -62,7 +25,25 @@ const HomeTableTitle = () => {
   );
 };
 
-export function HomeTable() {
+const HomeTable = () => {
+  const [latestProjects, setLatestProjects] = useState<ProjectData[]>([]);
+  useEffect(() => {
+    /**
+     * Fetches projects from the API and updates the state with the latest projects.
+     */
+    const fetchProjects = async () => {
+      const response = await fetch("/api/projects");
+      const projects: ProjectData[] = await response.json(); // Explicitly type projects as ProjectData[]
+      if (projects.length > 0) {
+        setLatestProjects(projects);
+      } else {
+        console.error("Failed to load projects");
+      }
+    };
+
+    void fetchProjects();
+  }, []);
+
   return (
     <>
       <div className="flex flex-col lg:py-8">
@@ -112,7 +93,13 @@ export function HomeTable() {
                               <div className="h-10 w-10">
                                 <Image
                                   className="rounded-full"
-                                  src={project.image}
+                                  src={
+                                    project.image
+                                      ? `data:image/jpeg;base64,${project.image.toString(
+                                          "base64",
+                                        )}`
+                                      : "/path/to/default/image.jpg"
+                                  }
                                   alt="Project Icon"
                                   width={43}
                                   height={43}
@@ -197,4 +184,6 @@ export function HomeTable() {
       </div>
     </>
   );
-}
+};
+
+export default HomeTable;
