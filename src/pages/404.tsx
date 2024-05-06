@@ -1,6 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
 import { IndexLayout } from "../layout/Layout";
+
+/**
+ * This is the custom 404 page for the application.
+ * It is displayed when a user navigates to a page that does not exist.
+ * @returns {JSX.Element} - The 404 page.
+ */
 export default function NotFound() {
   return (
     <>
