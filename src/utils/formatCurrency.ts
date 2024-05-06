@@ -1,3 +1,12 @@
+/**
+ * Format a number into a currency string.
+ * @param num - The number to format.
+ * @param includeDecimals - Whether to include decimals in the formatted string.
+ * @returns The formatted currency string.
+ *
+ * Used in src/components/ProjectCard.tsx
+ */
+
 export function formatCurrency(num: number, includeDecimals = true): string {
   let formattedNumber = num;
 
