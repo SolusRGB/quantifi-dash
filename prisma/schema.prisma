@@ -71,3 +71,14 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model Project {
+    id          Int     @id @default(autoincrement())
+    name        String
+    assessDate  String
+    score       String?
+    mintDate    String
+    image       Bytes? // question mark means optiona, stored as bytes because it's an image file (BLOB)
+    href        String
+    chain       String
+}
