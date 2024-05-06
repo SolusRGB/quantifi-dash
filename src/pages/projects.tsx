@@ -4,6 +4,12 @@ import { IndexLayout } from "../layout/Layout";
 import MagicEdenTable from "@/components/tables/magic-eden/MagicEdenTable";
 import SolanaPriceInfo from "@/components/tokens/SolanaPriceInfo";
 
+/**
+ * This is the projects page for the application.
+ * It is displayed when a user navigates to the /projects URL.
+ * @returns {JSX.Element} - The projects page.
+ */
+
 export default function Projects() {
   return (
     <>
