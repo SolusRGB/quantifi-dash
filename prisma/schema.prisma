@@ -10,8 +10,9 @@ generator client {
 }
 
 
+// Left in to show how to create a model to store user posts
 model Post {
-    id        Int      @id @default(autoincrement()) // change to cuid() for production
+    id        Int      @id @default(autoincrement()) 
     name      String
     createdAt DateTime @default(now())
     updatedAt DateTime 
