@@ -1,3 +1,5 @@
+// Used to style the application with custron Tailwind CSS classes.
+
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
