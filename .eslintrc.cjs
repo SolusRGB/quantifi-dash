@@ -1,3 +1,11 @@
+/**
+ * This is used for the ESLint configuration.
+ * It is used to validate the TypeScript code.
+ * This comes from the `@t3-oss/eslint-config` package.
+ *
+ * I have added some more rules to the configuration. To help with the development process. (lines 22-28)
+ */
+
 /** @type {import("eslint").Linter.Config} */
 const config = {
   parser: "@typescript-eslint/parser",
@@ -13,7 +21,10 @@ const config = {
   rules: {
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
-
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {
