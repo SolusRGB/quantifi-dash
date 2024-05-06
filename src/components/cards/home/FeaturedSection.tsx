@@ -1,7 +1,6 @@
 import featuredData from "./data/FeaturedData.json";
 import Image from "next/image";
 import Link from "next/link";
-import { InformationCircleIcon } from "@heroicons/react/24/solid";
 
 type FeaturedCardsProp = {
   path: string;
@@ -14,7 +13,7 @@ const FeaturedCards = ({ path, name, header, label }: FeaturedCardsProp) => {
   return (
     <div>
       <Link href={path} target="_blank" rel="noopener noreferrer">
-        <div className="aspect-w-1 aspect-h-1 relative overflow-hidden duration-100 hover:brightness-110 lg:rounded-3xl">
+        <div className="aspect-h-1 aspect-w-1 relative overflow-hidden duration-100 hover:brightness-110 lg:rounded-3xl">
           <Image
             alt={name}
             src={header}
@@ -22,8 +21,9 @@ const FeaturedCards = ({ path, name, header, label }: FeaturedCardsProp) => {
             fill
             sizes="100vw"
             style={{
-              objectFit: "cover"
-            }} />
+              objectFit: "cover",
+            }}
+          />
         </div>
         <div className="flex">
           <div className="inline-flex items-center px-4 pt-3 text-xs font-medium text-white/80 xl:text-lg">
