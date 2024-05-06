@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { useSession } from "next-auth/react";
 import {
   MagnifyingGlassCircleIcon,
   LifebuoyIcon,
@@ -10,13 +11,18 @@ import { Header } from "@/components/Header";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { PAccessCard } from "../components/cards/home/PAccessCard";
-import { FolderIcon, BellIcon } from "@heroicons/react/24/outline";
+import {
+  FolderIcon,
+  BellIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Latest", href: "/", icon: FolderIcon },
-  { name: "Projects", href: "/projects", icon: FolderIcon },
-  { name: "Charts", href: "/charts", icon: BellIcon },
-];
+// const navigation = [
+//   { name: "Latest", href: "/", icon: FolderIcon },
+//   { name: "Projects", href: "/projects", icon: FolderIcon },
+//   { name: "Charts", href: "/charts", icon: BellIcon },
+//   { name: "Profile", href: "/profile", icon: UserCircleIcon },
+// ];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -24,8 +30,21 @@ function classNames(...classes: string[]) {
 
 export function IndexLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const { data: sessionData } = useSession();
   const router = useRouter();
+
+  const navigation = [
+    { name: "Latest", href: "/", icon: FolderIcon },
+    { name: "Projects", href: "/projects", icon: FolderIcon },
+    { name: "Charts", href: "/charts", icon: BellIcon },
+    {
+      name: "Profile",
+      href: sessionData?.user
+        ? `/users/${sessionData.user.id}`
+        : "/api/auth/signin",
+      icon: UserCircleIcon,
+    },
+  ];
 
   return (
     <>
@@ -303,11 +322,11 @@ export function IndexLayout({ children }: { children: React.ReactNode }) {
 
           <main className="mx-auto w-full">
             <div className="hidden backdrop-blur-md lg:sticky lg:top-0 lg:z-50 lg:mb-6 lg:block lg:w-full lg:border-b lg:border-[#e6e6e6]/5 lg:bg-[#121212]/75 lg:py-[1.3rem]">
-              <div className="mx-auto md:max-w-7xl md:px-8">
+              <div className="md:max-w-8xl mx-auto md:px-8">
                 <Header />
               </div>
             </div>
-            <div className="mx-auto md:max-w-5xl lg:max-w-7xl lg:px-8">
+            <div className="mx-auto md:max-w-5xl lg:max-w-7xl lg:px-1">
               {children}
             </div>
             <Footer />
