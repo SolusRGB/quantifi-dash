@@ -1,6 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
 import { IndexLayout } from "../layout/Layout";
+
+/**
+ * This is the custom 500 page for the application.
+ * It is displayed when a server error occurs.
+ * @returns {JSX.Element} - The 500 page.
+ */
 export default function NotFound() {
   return (
     <>
