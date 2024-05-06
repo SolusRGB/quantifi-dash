@@ -2,6 +2,12 @@ import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
 /**
+ * This is the environment configuration for the application. It is used to validate the environment variables
+ * This comes from the `@t3-oss/env-nextjs` package.
+ * You can define the environment variables schema here.
+ */
+
+/**
  * Represents the environment configuration for the application.
  *
  * @typedef {Object} EnvConfig
