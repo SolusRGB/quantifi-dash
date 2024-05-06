@@ -1,5 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+/**
+ * This is the custom Document component for the application.
+ * It includes the custom fonts from Google Fonts.
+ * @returns {JSX.Element} - The custom Document component.
+ */
+
 export default class MyDocument extends Document {
   render() {
     return (
