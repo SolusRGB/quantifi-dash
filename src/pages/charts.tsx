@@ -1,9 +1,13 @@
 import Heatmap from "@/components/trading-view/charts/Heatmap";
-
 import TradingViewWidget from "@/components/trading-view/charts/TradingViewWidget";
-
 import { IndexLayout } from "@/layout/Layout";
 import React from "react";
+
+/**
+ * This is the page that displays the trading charts.
+ * It includes two widgets: TradingViewWidget and Heatmap.
+ * @returns {JSX.Element} - The trading charts page.
+ */
 
 export default function charts() {
   return (
