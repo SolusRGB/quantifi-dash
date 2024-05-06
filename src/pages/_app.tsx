@@ -13,6 +13,14 @@ type ComponentWithPageLayout = AppProps & {
   };
 };
 
+/**
+ * This is where the entire application runs from.
+ * It wraps the entire application with the SessionProvider to provide session data to all components.
+ * It also includes the Analytics component from Vercel to track page views.
+ * @param {AppProps} param0 - The AppProps object containing the Component and pageProps.
+ * @returns {JSX.Element} - The application component.
+ */
+
 function MyApp({
   Component,
   pageProps: { session, ...pageProps },
