@@ -1,10 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useSession } from "next-auth/react";
-import {
-  MagnifyingGlassCircleIcon,
-  LifebuoyIcon,
-} from "@heroicons/react/24/outline";
+import { LifebuoyIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -16,13 +13,7 @@ import {
   BellIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-
-// const navigation = [
-//   { name: "Latest", href: "/", icon: FolderIcon },
-//   { name: "Projects", href: "/projects", icon: FolderIcon },
-//   { name: "Charts", href: "/charts", icon: BellIcon },
-//   { name: "Profile", href: "/profile", icon: UserCircleIcon },
-// ];
+import AuthShowcase from "@/components/auth/AuthShowcase";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -79,43 +70,16 @@ export function IndexLayout({ children }: { children: React.ReactNode }) {
                     <Link href="/">
                       <div>
                         {/* Mobile quantifi Logo */}
-                        <svg
-                          id="b"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 1141.3 223.8"
-                          width="100px"
-                          height="18px"
-                          fill="#e6e6e6"
-                        >
-                          <g id="c">
-                            <g>
-                              <path
-                                className="d"
-                                d="M0,111.9C0,47.3,47.4,0,114.6,0s101.1,34.9,111.9,85.9h-56.3c-8.5-22-28.6-36.5-55.6-36.5s-60.6,26.4-60.6,62.5,24.1,62.5,60.6,62.5,47.1-14.5,55.6-36.5h56.3c-10.9,51-54.3,85.9-111.9,85.9C47.4,223.9,0,176.5,0,111.9Z"
-                              />
-                              <path
-                                className="d"
-                                d="M275.9,130.4L197.2,4.3h62.9l42.4,75.7L345,4.3h61.6l-77.4,124.5v90.8h-53.3v-89.3h0Z"
-                              />
-                              <path
-                                className="d"
-                                d="M408,30l16.3-25.7h68.4c58.6,0,84.6,32,84.6,75.7s-26,76.1-84.6,76.1h-31.3v63.5h-53.3V30h0Zm85.7,76.6c22.8,0,29.6-11.2,29.6-26.7s-6.9-26.4-29.6-26.4h-32.2v53h32.2Z"
-                              />
-                              <path
-                                className="d"
-                                d="M589.7,4.3h53.3V85.7h80.6V4.3h53.3V219.6h-53.3v-84.6h-80.6v84.6h-53.3V4.3Z"
-                              />
-                              <path
-                                className="d"
-                                d="M791,4.3h159V53.7h-105.7v35.2h86.6v42.8h-86.6v38.6h105.7v49.4h-159V4.3h0Z"
-                              />
-                              <path
-                                className="d"
-                                d="M963.9,4.3h87.2c56.9,0,82.3,30.9,82.3,73.8s-12.8,55-40.5,66.5l48.4,75h-63.3l-38.2-67.5h-22.8v67.5h-53.3V4.3h0Zm87.8,98.4c21.4,0,27.7-10.5,27.7-24.7s-6.2-24.3-27.7-24.3h-34.5v49h34.5Z"
-                              />
-                            </g>
-                          </g>
-                        </svg>
+                        <Image
+                          src="/quantifi.svg"
+                          alt="Quantifi Logo"
+                          width={150}
+                          height={50}
+                          style={{
+                            maxWidth: "70%",
+                            height: "auto",
+                          }}
+                        />
                       </div>
                     </Link>
                     <button
@@ -124,7 +88,7 @@ export function IndexLayout({ children }: { children: React.ReactNode }) {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
-                      <MagnifyingGlassCircleIcon
+                      <LifebuoyIcon
                         className="h-6 w-6 text-platinum"
                         aria-hidden="true"
                       />
@@ -155,18 +119,10 @@ export function IndexLayout({ children }: { children: React.ReactNode }) {
                       </Link>
                     ))}
                     <div className="absolute bottom-14 w-full">
-                      <div className="flex flex-wrap-reverse items-center justify-center space-x-4 border-y border-[#e6e6e6]/5 py-6">
+                      <div className="flex flex-wrap-reverse items-center justify-center space-x-4 border-y border-[#e6e6e6]/5 p-20 py-6">
                         {isAuthenticated && (
                           <>
-                            <button
-                              className="my-1 flex rounded-full bg-sunray px-8 py-2 text-lg font-semibold text-black focus:outline-none"
-                              onClick={() => signOut()}
-                            >
-                              Disconnect
-                            </button>
-                            <div className="my-1 bg-sunray bg-clip-text px-10 py-2 text-lg font-semibold text-transparent">
-                              Wallet: {formattedAccount}
-                            </div>
+                            <AuthShowcase />
                           </>
                         )}
 
@@ -271,43 +227,16 @@ export function IndexLayout({ children }: { children: React.ReactNode }) {
             <Link href="/">
               <div>
                 {/* Mobile quantifi Logo */}
-                <svg
-                  id="b"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1141.3 223.8"
-                  width="100px"
-                  height="18px"
-                  fill="#e6e6e6"
-                >
-                  <g id="c">
-                    <g>
-                      <path
-                        className="d"
-                        d="M0,111.9C0,47.3,47.4,0,114.6,0s101.1,34.9,111.9,85.9h-56.3c-8.5-22-28.6-36.5-55.6-36.5s-60.6,26.4-60.6,62.5,24.1,62.5,60.6,62.5,47.1-14.5,55.6-36.5h56.3c-10.9,51-54.3,85.9-111.9,85.9C47.4,223.9,0,176.5,0,111.9Z"
-                      />
-                      <path
-                        className="d"
-                        d="M275.9,130.4L197.2,4.3h62.9l42.4,75.7L345,4.3h61.6l-77.4,124.5v90.8h-53.3v-89.3h0Z"
-                      />
-                      <path
-                        className="d"
-                        d="M408,30l16.3-25.7h68.4c58.6,0,84.6,32,84.6,75.7s-26,76.1-84.6,76.1h-31.3v63.5h-53.3V30h0Zm85.7,76.6c22.8,0,29.6-11.2,29.6-26.7s-6.9-26.4-29.6-26.4h-32.2v53h32.2Z"
-                      />
-                      <path
-                        className="d"
-                        d="M589.7,4.3h53.3V85.7h80.6V4.3h53.3V219.6h-53.3v-84.6h-80.6v84.6h-53.3V4.3Z"
-                      />
-                      <path
-                        className="d"
-                        d="M791,4.3h159V53.7h-105.7v35.2h86.6v42.8h-86.6v38.6h105.7v49.4h-159V4.3h0Z"
-                      />
-                      <path
-                        className="d"
-                        d="M963.9,4.3h87.2c56.9,0,82.3,30.9,82.3,73.8s-12.8,55-40.5,66.5l48.4,75h-63.3l-38.2-67.5h-22.8v67.5h-53.3V4.3h0Zm87.8,98.4c21.4,0,27.7-10.5,27.7-24.7s-6.2-24.3-27.7-24.3h-34.5v49h34.5Z"
-                      />
-                    </g>
-                  </g>
-                </svg>
+                <Image
+                  src="/quantifi.svg"
+                  alt="Quantifi Logo"
+                  width={150}
+                  height={50}
+                  style={{
+                    maxWidth: "70%",
+                    height: "auto",
+                  }}
+                />
               </div>
             </Link>
             <button

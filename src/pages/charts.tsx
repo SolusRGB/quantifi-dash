@@ -1,4 +1,5 @@
 import Heatmap from "@/components/trading-view/charts/Heatmap";
+
 import TradingViewWidget from "@/components/trading-view/charts/TradingViewWidget";
 import { IndexLayout } from "@/layout/Layout";
 import React from "react";
